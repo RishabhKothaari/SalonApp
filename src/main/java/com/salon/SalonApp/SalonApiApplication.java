@@ -1,6 +1,7 @@
 package com.salon.SalonApp;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,6 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import static springfox.documentation.builders.PathSelectors.ant;
 
 @SpringBootApplication
+@EnableAutoConfiguration
 @ComponentScan("com.salon.SalonApp")
 @EnableSwagger2
 public class SalonApiApplication {
@@ -37,7 +39,7 @@ public class SalonApiApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/api/services/**/*").allowedOrigins("*");
+				registry.addMapping("/api/services/**/*").allowedOrigins("http://localhost:3000").allowedMethods("GET","POST","PUT","DELETE","PATCH","OPTIONS");
 			}
 		};
 	}

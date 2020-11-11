@@ -17,21 +17,32 @@ phone
 @Data
 
 public class SalonDetails {
-    @Value("SalonDetails.name")
+    @Value("${SalonDetails.name}")
     private String name;
 
-    @Value("SalonDetails.address")
+    @Value("${SalonDetails.address}")
     private String address;
 
-    @Value("SalonDetails.city")
+    @Value("${SalonDetails.city}")
     private String city;
 
-    @Value("SalonDetails.state")
+    @Value("${SalonDetails.state}")
     private String state;
 
-    @Value("SalonDetails.zipcode")
+    @Value("${SalonDetails.zipcode}")
     private String zipcode;
 
-    @Value("SalonDetails.phone")
+    @Value("${SalonDetails.phone}")
     private String phone;
+
+//    public SalonDetails getClonned(){
+//        SalonDetails salonDetails = new SalonDetails();
+//        salonDetails.setName(name);
+//        salonDetails.setAddress(address);
+//        salonDetails.setCity(city);
+//        salonDetails.setState(state);
+//        salonDetails.setPhone(phone);
+//        salonDetails.setZipcode(zipcode);
+//        return salonDetails;
+//    }
 }

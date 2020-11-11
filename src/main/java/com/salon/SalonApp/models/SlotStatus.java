@@ -1,5 +1,5 @@
 package com.salon.SalonApp.models;
 
-enum  SlotStatus {
+public enum  SlotStatus {
     AVAILABLE,LOCKED,CONFIRMED,CANCELLED
 }

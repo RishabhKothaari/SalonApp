@@ -16,8 +16,8 @@ public class SalonSlotController {
     @Autowired
     private SalonSlotServiceImpl salonSlotService;
 
-    @GetMapping("/api/services/slots/{date}")
-    public List<Slot> retrieveAvailableSlots(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date){
-        return salonSlotService.findSlots(date);
+    @GetMapping("/api/services/slots/{serviceId}/{date}")
+    public List<Slot> retrieveAvailableSlots(@PathVariable Long serviceId, @PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date){
+        return salonSlotService.findSlots(serviceId,date.toString());
     }
 }
